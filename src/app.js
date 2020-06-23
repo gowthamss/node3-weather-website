@@ -9,6 +9,7 @@ const forecast = require('../src/utils/forecast');
 const express = require('express');
 
 const app = express();
+const port = process.env.PORT;
 
 // Define paths for express config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -124,6 +125,6 @@ app.get('*', (req, res) => {
 
 
 
-app.listen(3000, () => {
-    console.log('The service is running on localhost at port 3000');
+app.listen(port, () => {
+    console.log('The service is running on localhost at port ' + port);
 })
